@@ -13,10 +13,12 @@ export default function BackgroundWithLogo({ title, logoSource }: Props) {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <View style={{flex: 2}}>
       <Image source={logoSource} style={styles.logo} resizeMode="contain" />
       <Text variant="displaySmall" style={[styles.title, { color: colors.primary }]}>
         {title}
-      </Text>
+      </Text> 
+      </View>
     </View>
   );
 }
