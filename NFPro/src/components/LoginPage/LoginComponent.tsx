@@ -3,57 +3,13 @@ import { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
-  Image,
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
 import { Text, useTheme, TextInput } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import * as Animatable from "react-native-animatable";
-
-const fitnessIcons = [
-  "dumbbell",
-  "weight-lifter",
-  "run-fast",
-  "yoga",
-  "arm-flex",
-  "bike",
-  "swim",
-  "karate",
-  "weight",
-];
-
-const FitnessIconCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === fitnessIcons.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <View style={styles.iconContainer}>
-      <Animatable.View
-        key={currentIndex}
-        animation="fadeInUp"
-        duration={1000}
-        style={styles.iconWrapper}
-      >
-        <MaterialCommunityIcons
-          name={fitnessIcons[currentIndex]}
-          size={38}
-          color="#FAFAFA"
-        />
-      </Animatable.View>
-    </View>
-  );
-};
+import LoginHeader from "./LoginHeader";
 
 type Props = {
   logoSource: any;
@@ -63,6 +19,13 @@ export default function Login({ logoSource }: Props) {
   const { colors } = useTheme();
   const [checked, setChecked] = useState<boolean>(false);
   const [keyboardVisible, setKeyboardVisible] = useState<boolean>(false);
+  const [showLoginForm, setShowLoginForm] = useState<boolean>(false);
+  const [firstPage, setFirstPage] = useState<boolean>(true)
+
+  const handleContinue = () => {
+    setShowLoginForm(true);
+    setFirstPage(false);
+  };
 
   return (
     <View
@@ -72,24 +35,7 @@ export default function Login({ logoSource }: Props) {
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
-        <View style={styles.upperSection}>
-          <View style={styles.containerLogo}>
-            <Image
-              source={logoSource}
-              style={styles.logo}
-              resizeMode="contain"
-            />
-          </View>
-
-          <View style={styles.midContainer}>
-            <View style={styles.midText}>
-              <Text style={styles.slogan} variant="displaySmall">
-                O MELHOR PARCEIRO PARA SEU NEGÓCIO!
-              </Text>
-            </View>
-            <FitnessIconCarousel />
-          </View>
-        </View>
+        <LoginHeader logoSource={require('../../assets/images/logoNFPro.png')}/>
 
         <View style={styles.lowerSection}>
           <View style={styles.containerForm}>
@@ -134,6 +80,7 @@ export default function Login({ logoSource }: Props) {
                 alignItems: "center",
                 justifyContent: "center",
               }}
+              onPress={handleContinue}
             >
               <Text
                 variant="labelLarge"
@@ -143,10 +90,59 @@ export default function Login({ logoSource }: Props) {
               </Text>
             </TouchableOpacity>
 
-            {!keyboardVisible && <View style={{ paddingTop: 40 }}></View>}
+            {!keyboardVisible && firstPage && showLoginForm && <View style={{ paddingTop: 40 }}></View>}
           </View>
         </View>
+
+
       </KeyboardAvoidingView>
+
+      {showLoginForm && (
+          <View style={styles.loginContainer}>
+            <Text
+              variant="headlineMedium"
+              style={{ fontWeight: "bold", backgroundColor: colors.primary }}
+            >
+              Boas vindas novamente!{" "}
+            </Text>
+
+            <TextInput
+              mode="outlined"
+              label=""
+              outlineColor="#d4d4d4"
+              activeOutlineColor="#787878"
+              style={styles.input}
+            />
+
+            <TextInput
+              mode="outlined"
+              label="Senha"
+              outlineColor="#d4d4d4"
+              activeOutlineColor="#787878"
+              style={styles.input}
+            />
+
+            <TouchableOpacity
+              style={{
+                marginTop: 35,
+                backgroundColor: colors.background,
+                borderRadius: 12,
+                height: 60,
+                paddingVertical: 16,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              onPress={handleContinue}
+            >
+              <Text
+                variant="labelLarge"
+                style={{ color: "#fafafa", fontWeight: "bold" }}
+              >
+                Entrar
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
     </View>
   );
 }
@@ -154,6 +150,7 @@ export default function Login({ logoSource }: Props) {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    position: "relative",
   },
   upperSection: {
     height: "60%",
@@ -224,5 +221,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 10,
     color: "#666",
+  },
+
+  loginContainer: {
+    backgroundColor: "#fafafa",
+    position: "absolute",
+    bottom: 0,
+    height: "82%",
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    width: "100%",
+    padding: 24,
   },
 });
