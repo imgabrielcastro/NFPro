@@ -1,0 +1,204 @@
+{
+  "usuarios": [
+    {
+      "Id": 11520131,
+      "Nome": "Gustavo Dias",
+      "Sexo": 1,
+      "DataNascimento": "1996-05-12T00:00:00Z",
+      "Fone": "981234567",
+      "Email": "gustavo.dias@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520132,
+      "Nome": "José Gabriel",
+      "Sexo": 1,
+      "DataNascimento": "1995-08-21T00:00:00Z",
+      "Fone": "982345678",
+      "Email": "jose.gabriel@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520133,
+      "Nome": "Saymon Espindola",
+      "Sexo": 1,
+      "DataNascimento": "1994-11-30T00:00:00Z",
+      "Fone": "983456789",
+      "Email": "saymon.espindola@example.com",
+      "Cpf": null,
+      "Situacao": "Inativo"
+    },
+    {
+      "Id": 11520134,
+      "Nome": "Angelo José",
+      "Sexo": 1,
+      "DataNascimento": "1993-04-10T00:00:00Z",
+      "Fone": "984567890",
+      "Email": "angelo.jose@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520135,
+      "Nome": "Eduardo Santana",
+      "Sexo": 1,
+      "DataNascimento": "1991-02-15T00:00:00Z",
+      "Fone": "985678901",
+      "Email": "eduardo.santana@example.com",
+      "Cpf": null,
+      "Situacao": "Inativo"
+    },
+    {
+      "Id": 11520136,
+      "Nome": "Douglas Waltrick",
+      "Sexo": 1,
+      "DataNascimento": "1997-07-20T00:00:00Z",
+      "Fone": "986789012",
+      "Email": "douglas.waltrick@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520137,
+      "Nome": "Paulo Henrique",
+      "Sexo": 1,
+      "DataNascimento": "1996-10-09T00:00:00Z",
+      "Fone": "987890123",
+      "Email": "paulo.henrique@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520138,
+      "Nome": "João Wirth Whisky",
+      "Sexo": 1,
+      "DataNascimento": "1992-06-17T00:00:00Z",
+      "Fone": "988901234",
+      "Email": "joao.wirth@example.com",
+      "Cpf": null,
+      "Situacao": "Inativo"
+    },
+    {
+      "Id": 11520139,
+      "Nome": "Vitor Freitas",
+      "Sexo": 1,
+      "DataNascimento": "1995-01-28T00:00:00Z",
+      "Fone": "989012345",
+      "Email": "vitor.freitas@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520140,
+      "Nome": "João Alves",
+      "Sexo": 1,
+      "DataNascimento": "1994-09-14T00:00:00Z",
+      "Fone": "990123456",
+      "Email": "joao.alves@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520141,
+      "Nome": "Bruno Koscrevic",
+      "Sexo": 1,
+      "DataNascimento": "1993-03-11T00:00:00Z",
+      "Fone": "991234567",
+      "Email": "bruno.koscrevic@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520142,
+      "Nome": "Caio Hobold",
+      "Sexo": 1,
+      "DataNascimento": "1992-08-02T00:00:00Z",
+      "Fone": "992345678",
+      "Email": "caio.hobold@example.com",
+      "Cpf": null,
+      "Situacao": "Inativo"
+    },
+    {
+      "Id": 11520143,
+      "Nome": "Tiago Bittencourt",
+      "Sexo": 1,
+      "DataNascimento": "1990-12-22T00:00:00Z",
+      "Fone": "993456789",
+      "Email": "tiago.bittencourt@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520144,
+      "Nome": "Arthur Rocha",
+      "Sexo": 1,
+      "DataNascimento": "1991-11-01T00:00:00Z",
+      "Fone": "994567890",
+      "Email": "arthur.rocha@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520145,
+      "Nome": "Lucas Ribeiro",
+      "Sexo": 1,
+      "DataNascimento": "1996-03-25T00:00:00Z",
+      "Fone": "995678901",
+      "Email": "lucas.ribeiro@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520146,
+      "Nome": "Mariana Souza",
+      "Sexo": 2,
+      "DataNascimento": "1997-08-10T00:00:00Z",
+      "Fone": "996789012",
+      "Email": "mariana.souza@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520147,
+      "Nome": "Beatriz Lima",
+      "Sexo": 2,
+      "DataNascimento": "1993-05-18T00:00:00Z",
+      "Fone": "997890123",
+      "Email": "beatriz.lima@example.com",
+      "Cpf": null,
+      "Situacao": "Inativo"
+    },
+    {
+      "Id": 11520148,
+      "Nome": "Rafael Martins",
+      "Sexo": 1,
+      "DataNascimento": "1992-02-04T00:00:00Z",
+      "Fone": "998901234",
+      "Email": "rafael.martins@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520149,
+      "Nome": "Isabela Andrade",
+      "Sexo": 2,
+      "DataNascimento": "1995-06-06T00:00:00Z",
+      "Fone": "999012345",
+      "Email": "isabela.andrade@example.com",
+      "Cpf": null,
+      "Situacao": "Ativo"
+    },
+    {
+      "Id": 11520150,
+      "Nome": "Henrique Silva",
+      "Sexo": 1,
+      "DataNascimento": "1994-01-09T00:00:00Z",
+      "Fone": "999987654",
+      "Email": "henrique.silva@example.com",
+      "Cpf": null,
+      "Situacao": "Inativo"
+    }
+  ]
+}

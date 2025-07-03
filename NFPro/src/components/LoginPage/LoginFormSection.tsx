@@ -17,9 +17,15 @@ const LoginFormSection: React.FC<Props> = ({ onLogin, email, onBack }) => {
     <View style={styles.loginContainer}>
       <Text
         variant="headlineMedium"
-        style={{ fontWeight: "bold", backgroundColor: colors.primary }}
+        style={{
+          fontWeight: "bold",
+          backgroundColor: colors.primary,
+          paddingBottom: 20,
+          marginBottom: 15,
+          textAlign: "center",
+        }}
       >
-        Boas vindas novamente!{" "}
+        Boas vindas novamente!
       </Text>
 
       <View style={{ flexDirection: "row" }}>
@@ -43,7 +49,7 @@ const LoginFormSection: React.FC<Props> = ({ onLogin, email, onBack }) => {
         </TouchableOpacity>
       </View>
 
-      <View style={{ marginBottom: 5,  flexDirection:'row'}}>
+      <View style={{ marginBottom: 5, flexDirection: "row" }}>
         <TextInput
           mode="outlined"
           label="Senha"
@@ -53,8 +59,15 @@ const LoginFormSection: React.FC<Props> = ({ onLogin, email, onBack }) => {
           secureTextEntry={!showPassword}
         />
 
-        <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={{ position: 'absolute', right: 20, top: 15, zIndex: 1 }}>
-          <Icon name={showPassword ? "visibility" : "visibility-off"} size={25} color={colors.background} />
+        <TouchableOpacity
+          onPress={() => setShowPassword(!showPassword)}
+          style={{ position: "absolute", right: 20, top: 15, zIndex: 1 }}
+        >
+          <Icon
+            name={showPassword ? "visibility" : "visibility-off"}
+            size={25}
+            color={colors.background}
+          />
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.button} onPress={onLogin}>
@@ -90,7 +103,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 35,
-    backgroundColor: "#333", // será sobrescrito pelo `colors.background`
+    backgroundColor: "#333",
     borderRadius: 12,
     height: 60,
     paddingVertical: 16,

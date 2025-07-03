@@ -9,14 +9,13 @@ type Props = {
   onContinue: (email: string) => void;
 };
 
-
 const EmailFormSection: React.FC<Props> = ({
   checked,
   onToggleCheck,
   onContinue,
 }) => {
   const { colors } = useTheme();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   return (
     <View style={{ height: "40%", width: "100%" }}>
@@ -30,7 +29,10 @@ const EmailFormSection: React.FC<Props> = ({
           paddingTop: 24,
         }}
       >
-        <Text variant="titleMedium" style={{ marginVertical: 12, color: "#666" }}>
+        <Text
+          variant="titleMedium"
+          style={{ marginVertical: 12, color: "#666" }}
+        >
           Informe seu e-mail para acessar
         </Text>
 
@@ -90,4 +92,3 @@ const EmailFormSection: React.FC<Props> = ({
 };
 
 export default EmailFormSection;
-
