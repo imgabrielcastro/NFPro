@@ -9,6 +9,8 @@ import { Text, useTheme} from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import * as Animatable from "react-native-animatable";
 
+
+
 const fitnessIcons = [
   "dumbbell",
   "weight-lifter",

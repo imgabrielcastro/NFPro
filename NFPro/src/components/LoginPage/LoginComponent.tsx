@@ -10,21 +10,30 @@ import {
 import { Text, useTheme, TextInput } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import LoginHeader from "./LoginHeader";
+import EmailFormSection from "./EmailFormSection"; 
+import LoginFormSection from "./LoginFormSection";
+
 
 type Props = {
   logoSource: any;
 };
 
-export default function Login({ logoSource }: Props) {
+export default function Login() {
   const { colors } = useTheme();
   const [checked, setChecked] = useState<boolean>(false);
   const [keyboardVisible, setKeyboardVisible] = useState<boolean>(false);
   const [showLoginForm, setShowLoginForm] = useState<boolean>(false);
-  const [firstPage, setFirstPage] = useState<boolean>(true)
+  const [email, setEmail] = useState<string>('');
+  const [firstPage, setFirstPage] = useState<boolean>(true);
 
   const handleContinue = () => {
     setShowLoginForm(true);
     setFirstPage(false);
+  };
+
+  const handleBack = () => {
+    setShowLoginForm(false);
+    setFirstPage(true);
   };
 
   return (
@@ -35,114 +44,24 @@ export default function Login({ logoSource }: Props) {
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
-        <LoginHeader logoSource={require('../../assets/images/logoNFPro.png')}/>
+        <LoginHeader
+          logoSource={require("../../assets/images/logoNFPro.png")}
+        />
 
-        <View style={styles.lowerSection}>
-          <View style={styles.containerForm}>
-            <Text
-              variant="titleMedium"
-              style={[styles.title, { color: "#666" }]}
-            >
-              Informe seu e-mail para acessar
-            </Text>
-            <TextInput
-              mode="outlined"
-              label="Endereço de e-mail"
-              outlineColor="#d4d4d4"
-              activeOutlineColor="#787878"
-              style={styles.input}
-            />
-
-            <View style={styles.checkEmail}>
-              <TouchableOpacity
-                onPress={() => setChecked(!checked)}
-                style={{ flexDirection: "row", alignItems: "center" }}
-              >
-                <MaterialCommunityIcons
-                  name={checked ? "checkbox-marked" : "checkbox-blank-outline"}
-                  size={24}
-                  color={checked ? "#212121" : "#666"}
-                />
-
-                <Text style={{ color: "#666", marginLeft: 8 }}>
-                  Lembrar meu e-mail
-                </Text>
-              </TouchableOpacity>
-            </View>
-
-            <TouchableOpacity
-              style={{
-                marginTop: 35,
-                backgroundColor: colors.background,
-                borderRadius: 12,
-                height: 60,
-                paddingVertical: 16,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              onPress={handleContinue}
-            >
-              <Text
-                variant="labelLarge"
-                style={{ color: "#fafafa", fontWeight: "bold" }}
-              >
-                Continuar
-              </Text>
-            </TouchableOpacity>
-
-            {!keyboardVisible && firstPage && showLoginForm && <View style={{ paddingTop: 40 }}></View>}
-          </View>
-        </View>
-
+        <EmailFormSection
+          checked={checked}
+          onToggleCheck={() => setChecked(!checked)}
+          onContinue={(email: string) => {
+            setEmail(email);
+            setShowLoginForm(true);
+          }}
+        />
 
       </KeyboardAvoidingView>
 
-      {showLoginForm && (
-          <View style={styles.loginContainer}>
-            <Text
-              variant="headlineMedium"
-              style={{ fontWeight: "bold", backgroundColor: colors.primary }}
-            >
-              Boas vindas novamente!{" "}
-            </Text>
+      {showLoginForm && <LoginFormSection onLogin={handleContinue} email={email} onBack={handleBack} />}
 
-            <TextInput
-              mode="outlined"
-              label=""
-              outlineColor="#d4d4d4"
-              activeOutlineColor="#787878"
-              style={styles.input}
-            />
-
-            <TextInput
-              mode="outlined"
-              label="Senha"
-              outlineColor="#d4d4d4"
-              activeOutlineColor="#787878"
-              style={styles.input}
-            />
-
-            <TouchableOpacity
-              style={{
-                marginTop: 35,
-                backgroundColor: colors.background,
-                borderRadius: 12,
-                height: 60,
-                paddingVertical: 16,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              onPress={handleContinue}
-            >
-              <Text
-                variant="labelLarge"
-                style={{ color: "#fafafa", fontWeight: "bold" }}
-              >
-                Entrar
-              </Text>
-            </TouchableOpacity>
-          </View>
-        )}
+     
     </View>
   );
 }
