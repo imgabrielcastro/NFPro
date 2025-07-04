@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, TouchableOpacity } from "react-native";
 import { Text, TextInput, useTheme } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
 type Props = {
   checked: boolean;
@@ -16,6 +17,8 @@ const EmailFormSection: React.FC<Props> = ({
 }) => {
   const { colors } = useTheme();
   const [email, setEmail] = useState("");
+
+  const navigation = useNavigation();
 
   return (
     <View style={{ height: "40%", width: "100%" }}>

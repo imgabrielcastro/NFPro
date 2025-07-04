@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { Text, TextInput, useTheme } from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type Props = {
   onLogin: () => void;
@@ -9,9 +11,20 @@ type Props = {
   onBack: () => void;
 };
 
+type RootStackParamList = {
+  Clients: undefined;
+};
+
+type LoginFormSectionNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+
 const LoginFormSection: React.FC<Props> = ({ onLogin, email, onBack }) => {
   const [showPassword, setShowPassword] = useState(false);
   const { colors } = useTheme();
+  const navigation = useNavigation<LoginFormSectionNavigationProp>();
+
+  const handleLogin = () => {
+    navigation.navigate("Clients");
+  }
 
   return (
     <View style={styles.loginContainer}>
@@ -70,7 +83,7 @@ const LoginFormSection: React.FC<Props> = ({ onLogin, email, onBack }) => {
           />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.button} onPress={onLogin}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text
           variant="labelLarge"
           style={{ color: "#fafafa", fontWeight: "bold" }}
