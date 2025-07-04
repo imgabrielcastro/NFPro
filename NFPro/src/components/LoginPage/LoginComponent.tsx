@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     position: "relative",
-  },
+  }, 
 });
 

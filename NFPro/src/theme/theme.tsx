@@ -8,6 +8,5 @@ export const theme = {
     secondary: '#03dac6',
     background: '#212121',
     surface: '#FAFAFA',
-    text: '#212121',
   },
 };

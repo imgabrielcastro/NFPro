@@ -12,9 +12,16 @@ export function AppTabs() {
         component={Clients}
         options={{
           tabBarLabel: "Clientes",
-          tabBarIcon: () => (
-            <Icon name="people" color={"#666"} size={26} />
-          ),
+          tabBarIcon: () => <Icon name="people" color={"#666"} size={26} />,
+        }}
+      />
+
+      <Tab.Screen
+        name="ClientsTabs"
+        component={Clients}
+        options={{
+          tabBarLabel: "Teste",
+          tabBarIcon: () => <Icon name="people" color={"#666"} size={26} />,
         }}
       />
     </Tab.Navigator>
